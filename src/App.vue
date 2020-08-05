@@ -1,19 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <Navegation />
+    <Articles :posts="posts" />
+    <SideBar />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import Navegation from "./components/Navegation.vue";
+import Articles from "./components/Articles.vue";
+import SideBar from "./components/SideBar";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    Navegation,
+    Articles,
+    SideBar,
+  },
+  data() {
+    return {
+      posts: [
+        { content: "Text 1" },
+        { content: "Text 2" },
+        { content: "Text 3" },
+        { content: "Text 4" },
+      ],
+    };
+  },
+};
 </script>
 
 <style>
@@ -23,6 +41,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
